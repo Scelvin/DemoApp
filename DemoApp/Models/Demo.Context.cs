@@ -12,7 +12,8 @@ namespace DemoApp
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    
+    using DemoApp.Models;
+
     public partial class demoEntities : DbContext
     {
         public demoEntities()
@@ -25,6 +26,6 @@ namespace DemoApp
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<user> users { get; set; }
+        public virtual DbSet<user> user { get; set; }
     }
 }

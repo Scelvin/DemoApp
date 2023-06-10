@@ -13,7 +13,7 @@ namespace DemoApp.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            this.Register(); //
+            //return View(db.user.ToList());
             return View();
         }
 
@@ -21,13 +21,14 @@ namespace DemoApp.Controllers
         {
             return View();
         }
+        [HttpPost]
         public ActionResult Register(user users)
         {
-            if (db.users.Any(x=>x.username == users.username)) {
+            if (db.user.Any(x=>x.username == users.username)) {
                 ViewBag.Notification = "This account already exists.";
                 return View();
             } else {
-                db.users.Add(users); //still needs update
+                db.user.Add(users);
                 db.SaveChanges();
 
                 Session["idSS"]       = users.id.ToString();
