@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DemoApp
+namespace DemoApp.Models
 {
     using System;
     using System.Data.Entity;

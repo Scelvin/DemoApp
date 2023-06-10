@@ -11,14 +11,26 @@ namespace DemoApp.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public partial class user
     {
         public int id { get; set; }
+        [Required(ErrorMessage = "This field is required")]
+        [Display(Name = "Username")]
         public string username { get; set; }
+
+        [Required(ErrorMessage = "This field is required")]
+        [Display(Name = "Password")]
+        [DataType(DataType.Password)]
         public string password { get; set; }
-        public Nullable<int> lockout { get; set; }
-        public Nullable<System.DateTime> created_at { get; set; }
-        public Nullable<System.DateTime> updated_at { get; set; }
+
+        [Required(ErrorMessage = "This field is required")]
+        [Display(Name = "Retype Password")]
+        [DataType(DataType.Password)]
+        [NotMapped]
+        [Compare("password", ErrorMessage = "Passwords do not match, type again")]
+        public string confirmpassword { get; set; }
     }
 }

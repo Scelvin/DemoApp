@@ -1,0 +1,37 @@
+﻿@model IEnumerable<DemoApp.Models.user>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3>List of Users</h3>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.password)
+        </th>
+        <th>
+            Action
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.username)
+        </td>
+        <td>
+            ******
+        </td>
+        <td>
+            @Html.ActionLink("Edit","Edit", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
