@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using DemoApp.Controllers;
 using Microsoft.AspNet.FriendlyUrls;
 
 namespace DemoApp
@@ -20,7 +21,7 @@ namespace DemoApp
             routes.MapRoute(
                     name: "Default",
                     url: "{controller}/{action}/{id}",
-                    defaults: new { action = "Index", id = UrlParameter.Optional }
+                    defaults: new {controller="Home", action = "Login", id = UrlParameter.Optional }
                 );  
         }
     }

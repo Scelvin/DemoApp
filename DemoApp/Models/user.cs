@@ -18,7 +18,7 @@ namespace DemoApp.Models
     {
         public int id { get; set; }
         [Required(ErrorMessage = "This field is required")]
-        [Display (Name = "Username")]
+        [Display(Name = "Username")]
         public string username { get; set; }
 
         [Required(ErrorMessage = "This field is required")]
@@ -32,6 +32,5 @@ namespace DemoApp.Models
         [NotMapped]
         [Compare("password", ErrorMessage = "Passwords do not match, type again")]
         public string confirmpassword { get; set; }
-
     }
 }
