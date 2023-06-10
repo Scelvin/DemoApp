@@ -27,7 +27,7 @@ namespace DemoApp.Controllers
                 ViewBag.Notification = "This account already exists.";
                 return View();
             } else {
-                db.users.Add(users);
+                db.users.Add(users); //still needs update
                 db.SaveChanges();
 
                 Session["idSS"]       = users.id.ToString();
